@@ -6,7 +6,7 @@ type Response map[string]any
 
 func Success(data any, message string) Response {
 	// msg := "Your request has been successfully processed"
-	msg := "Permintaan Anda berhasil diproses"
+	msg := "Permintaan anda berhasil diproses"
 	if message != "" {
 		msg = message
 	}
@@ -31,7 +31,7 @@ func Error(errorMsg any) Response {
 			"success": false,
 			"errors":  errorMsg,
 			// "message": "Your request has been failed to process",
-			"message": "Permintaan Anda gagal diproses",
+			"message": "Permintaan anda gagal diproses",
 		}
 	}
 
@@ -54,19 +54,6 @@ func Error(errorMsg any) Response {
 	return Response{
 		"success": false,
 		// "message": "Your request has been failed to process",
-		"message": "Permintaan Anda gagal diproses",
-	}
-}
-
-func ErrorsWithMessage(errors map[string][]string, message string) Response {
-	if message == "" {
-		// message = "Your request has been failed to process"
-		message = "Permintaan Anda gagal diproses"
-	}
-
-	return Response{
-		"errors":  errors,
-		"success": false,
-		"message": message,
+		"message": "Permintaan anda gagal diproses",
 	}
 }

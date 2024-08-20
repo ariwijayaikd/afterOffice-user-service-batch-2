@@ -94,10 +94,9 @@ func (h *userHandler) login(c *fiber.Ctx) error {
 
 func (h *userHandler) profile(c *fiber.Ctx) error {
 	var (
-		req   = new(entity.ProfileRequest)
-		ctx   = c.Context()
-		local = middleware.Locals{}
-		l     = local.GetLocals(c)
+		req = new(entity.ProfileRequest)
+		ctx = c.Context()
+		l   = middleware.GetLocals(c)
 	)
 
 	req.UserId = l.GetUserId()
