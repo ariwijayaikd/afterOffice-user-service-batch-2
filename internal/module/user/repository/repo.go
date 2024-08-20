@@ -86,6 +86,8 @@ func (r *userRepository) FindByEmail(ctx context.Context, email string) (*entity
 			log.Warn().Err(err).Str("email", email).Msg("repo::FindByEmail - User not found")
 			return nil, errmsg.NewCustomErrors(400, errmsg.WithMessage("Email atau password salah"))
 		}
+		log.Error().Err(err).Str("email", email).Msg("repo::FindByEmail - Failed to get user")
+		return nil, err
 	}
 
 	return res, nil

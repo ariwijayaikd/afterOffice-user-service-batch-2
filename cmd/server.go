@@ -70,6 +70,13 @@ func RunServer(cmd *flag.FlagSet, args []string) {
 	app.Get("/metrics", monitor.New(monitor.Config{Title: config.Envs.App.Name + config.Envs.App.Environtment + " Metrics"}))
 	route.SetupRoutes(app)
 
+	// print all routes that are registered
+	// for _, route := range app.Stack() {
+	// 	for _, handler := range route {
+	// 		fmt.Printf("Method: %s, Path: %s\n", handler.Method, handler.Path)
+	// 	}
+	// }
+
 	// Run server in goroutine
 	go func() {
 		log.Info().Msgf("Server is running on port %s", SERVER_PORT)
