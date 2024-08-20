@@ -62,7 +62,7 @@ func (a *Adapter) Unsync() error {
 		if err := a.ShopeefunPostgres.Close(); err != nil {
 			errs = append(errs, err.Error())
 		}
-		log.Info().Msg("Digihub Postgres disconnected")
+		log.Info().Msg("Shopeefun Postgres disconnected")
 	}
 
 	if len(errs) > 0 {
