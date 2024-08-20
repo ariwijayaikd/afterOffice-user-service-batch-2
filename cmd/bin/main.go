@@ -17,6 +17,7 @@ func main() {
 
 	serverCmd := flag.NewFlagSet("server", flag.ExitOnError)
 	seedCmd := flag.NewFlagSet("seed", flag.ExitOnError)
+	// wsCmd := flag.NewFlagSet("ws", flag.ExitOnError)
 
 	if len(os.Args) < 2 {
 		log.Info().Msg("No command provided, defaulting to 'server'")
