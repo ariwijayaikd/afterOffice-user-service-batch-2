@@ -4,11 +4,10 @@ go 1.22.0
 
 require (
 	github.com/brianvoe/gofakeit/v7 v7.0.2
+	github.com/coreos/go-oidc v2.2.1+incompatible
 	github.com/go-playground/validator/v10 v10.19.0
-	github.com/goccy/go-json v0.10.3
 	github.com/gofiber/fiber/v2 v2.52.2
 	github.com/golang-jwt/jwt/v5 v5.2.1
-	github.com/gorilla/websocket v1.5.3
 	github.com/ilyakaznacheev/cleanenv v1.5.0
 	github.com/jmoiron/sqlx v1.3.5
 	github.com/lib/pq v1.10.9
@@ -22,7 +21,6 @@ require (
 
 require (
 	cloud.google.com/go/compute/metadata v0.5.0 // indirect
-	github.com/coreos/go-oidc v2.2.1+incompatible // indirect
 	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/kr/pretty v0.3.1 // indirect

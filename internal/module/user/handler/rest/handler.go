@@ -195,7 +195,13 @@ func (h *userHandler) callbackSigninGoogle(c *fiber.Ctx) error {
 		return c.Status(code).JSON(response.Error(errs))
 	}
 
-	return c.Status(fiber.StatusOK).JSON(response.Success(userInfo, ""))
+	res, err := h.service.LoginGoogle(ctx, &userInfo)
+	if err != nil {
+		code, errs := errmsg.Errors[error](err)
+		return c.Status(code).JSON(response.Error(errs))
+	}
+
+	return c.Status(fiber.StatusOK).JSON(response.Success(res, ""))
 }
 
 // Convert dari PRD ke user story
