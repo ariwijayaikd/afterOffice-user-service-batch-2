@@ -38,10 +38,10 @@ func (r *userRepository) Register(ctx context.Context, req *entity.RegisterReque
 			(SELECT id FROM roles WHERE name = 'end_user'),
 			?, ?, ?
 		)
-		RETURNING id
+		RETURNING id, name
 	`
 
-	err := r.db.QueryRowContext(ctx, r.db.Rebind(query), req.Email, req.Name, req.HassedPassword).Scan(&res.Id)
+	err := r.db.QueryRowContext(ctx, r.db.Rebind(query), req.Email, req.Name, req.HassedPassword).Scan(&res.Id, &res.Name)
 	if err != nil {
 		pqErr, ok := err.(*pq.Error)
 		if !ok {
