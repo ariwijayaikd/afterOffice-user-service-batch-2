@@ -25,7 +25,7 @@ func NewOauth2googleIntegration() *ouath2google {
 		ClientID:     config.Envs.Oauth.Google.ClientId,
 		ClientSecret: config.Envs.Oauth.Google.ClientSecret,
 		RedirectURL:  config.Envs.Oauth.Google.RedirectURL,
-		Scopes:       []string{"email", "profile"},
+		Scopes:       []string{"https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"},
 		Endpoint:     google.Endpoint,
 	}
 
