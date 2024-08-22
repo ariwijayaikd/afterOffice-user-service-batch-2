@@ -98,6 +98,7 @@ func (s *userService) LoginGoogle(ctx context.Context, req *oauthgoogleent.UserI
 				return nil, err
 			} else {
 				// TODO: logic to register user and save to database
+				return nil, errmsg.NewCustomErrors(404, errmsg.WithMessage("Email belum terdaftar"))
 			}
 		}
 		return nil, err
