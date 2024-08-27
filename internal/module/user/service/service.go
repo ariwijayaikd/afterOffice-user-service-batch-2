@@ -67,7 +67,7 @@ func (s *userService) Login(ctx context.Context, req *entity.LoginRequest) (*ent
 	if err != nil {
 		return nil, err
 	}
-
+	res.Id = user.Id
 	res.Token = token
 	return res, nil
 }
